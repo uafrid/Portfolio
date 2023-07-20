@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="style.css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: 'pooppins', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(background.jpg);
+    background-position: right;
+    background-size: cover;
+
+}
+ .container{
+    padding: 10px 10%;
+ }
+
+ nav{
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+ }
+
+ .logo{
+
+    width:200px;
+    
+
+ }
+ nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+
+ }
+
+ nav ul li a{
+    color:white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+ }
+ nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: dodgerblue;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+
+}
+
+.header-text{
+    margin-top: 20%;
+    font-size: 50px;
+}
+.header-text h1{
+    font-size: 80px;
+    margin-top:20px;
+}
+.header-text h1 span{
+    color:dodgerblue;
+}
+
+/--------------------about---------/
+#about{
+    padding:80px;
+    color:#ababab;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+
+.about-col-1{
+    flex-basis:35%;
+}
+.about-col-1 img{
+    width:100%;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tab-titles{
+    display:flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor:pointer;
+    position: relative;
+
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: dodgerblue;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+
+}
+.tab-links.active-link::after{
+    width:50%;
+}
+.tab-contents ul li{
+    list-style:none;
+    margin:10px 0;
+}
+.tab-contents ul li span{
+    color: dodgerblue;
+    font-size:14px;
+}
+.tab-contents{
+    display:none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+/--------------skills-------/
+#skills{
+    padding: 30px; 
+}
+.Skills-list div h2{
+    font-size:30px;
+    font-weight:500;
+    margin-bottom: 15px;
+}
+.Skills-list{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap:40px;
+    margin-top:50px;
+
+}
+.Skills-list div{
+    background:rgb(71, 70, 70);
+    padding:40px;
+    font-size:13px;
+    font-weight: 300;
+    border-radius:10px;
+    transition:background 0.5s, transform 0.5s;
+}
+.Skills-list div h2{
+    font-size:30px;
+    font-weight:500;
+    margin-bottom:15px;
+}
+.Skills-list div a{
+    text-decoration:none;
+    color:#fff;
+    font-size:12px;
+    margin-top:20px;
+    display:inline-block;
+}
+.Skills-list div:hover{
+    background:#b54769;
+    transform:translateY(-10px);
+}
+
+
+/-------------contact--------/
+.btn{
+    display:block;
+    margin:50px auto;
+    width:fit-content;
+    border: 1px solid dodgerblue;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis:60%;
+}
+.contact-left p{
+    margin-top:30px;
+
+}
+.contact-left p i{
+    color:dodgerblue;
+    margin-right:15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top:30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color:#ababab;
+    display:inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color:dodgerblue;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: dodgerblue;
+    text-decoration-color:#fff;
+
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    background-color: dodgerblue;
+    margin-top:20px;
+    cursor: pointer;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+
+}
+.copyright i{
+    color:dodgerblue;
+}
+
+/------------css for small screens-----/
+
+     nav .fas{
+       display: none;
+     }
+     @media only screen and (max-width: 600px){
+    .header-text{
+        margin-top:100%;
+        font-size: 16px;
+    } 
+    .header-text h1{
+        font-size: 30px;
+    }
+    nav .fas{
+        display:block;
+        font-size: 25px;
+    }
+    nav  ul{
+        background: dodgerblue;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fas{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .sub-title{
+        font-size:40px;
+
+    }.about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom:30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        font-size: 14px;
+    }
+}
+
+
+    </style>
+    
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontents of tabcontents){
+                tabcontents.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        var sidemenu= document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right ="0";
+        }
+        function closemenu(){
+            sidemenu.style.right ="-200px";
+        }
+    </script>
+</head>
+<body>
+    <div id="header">
+    <div class="container">
+        <nav>
+            <img src="bannerpic.jpg" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+
+        </nav>
+        <div class="header-text">
+            <h1>Hello, I'm <br><span>ULLIGADDALA AFRID</span></h1>
+            <p>From St.Jhons College of Engineering and Technology</p>
+            <p>Computer Science and Artificial Intelligence</p>
+
+        </div>
+
+    </div>
+    </div>
+<!-------------------about-->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="APHOTO.jpeg">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>Seeking a suitable position in a reputed organization.I am self motivated.I am individual hard working person.Looking forward to an opportunity
+                            which would help me to acquire skills there by giving scope to exploit
+                            for the development of the organization</p>
+                            <div class="tab-titles">
+                                <p class="tab-links active-link" onclick="opentab('personal information')">Personal Information</p>
+                                <p class="tab-links" onclick="opentab('education')">Education</p>
+                                
+                            </div>
+                            <div class="tab-contents active-tab" id="personal information">
+                                <ul>
+                                    <li><span>Mail ID:</span><br>uafriduafrid4180@gmail.com</li>
+                                    <li><span>Contact No:</span><br>6302850565</li>
+                                    <li><span>Date of Birth</span><br>22-04-2003</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="education">
+                                <ul>
+                                    <li><span>2020-2024</span><br>B.TECH-St.Jhons College of Engineering and Technology. </li>
+                                    <li><span>2018-2020</span><br>Intermediate- Deeksha Junior College,Yemmiganur.</li>
+                                    <li><span>2013-2018</span><br>SSC- ZP High school,Nandavaram.</li>
+                                </ul>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------skills-->
+    <div id="skills">
+        <div class="container">
+            <h1 class="sub-title">Skills</h1>
+            <div class="Skills-list">
+                <div>
+                    <h2>Technical Skills:</h2>
+                    <p>HTML <br>CSS<br> C<br> PYTHON<br> JAVA</p>
+                </div>
+                
+                <div>
+                    <h2>Strengths:</h2>
+                    <p> Ability to learn new concepts and improve the existing ones.<br>  Goal oriented and ability to thrive in a fast-paced organization. <br> Responsible Attitude.<br> Ability to work both individually as well as in a team. <br> Self-motivated.</p>
+                </div>
+
+            </div>
+        </div>
+    </div><!--certificate Start-->
+<section id="#Certificate">
+    <div class="container">
+      <h1 class="text-center">Certificate</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <img src="certficate1.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">ELITE</h5>
+              <p class="card-text">For Successfully Completed Course on<br>Introduction to  Internet of Things.</p>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <img src="certficate4.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">GREAT LEARNING</h5>
+              <p class="card-text"> Certificate on C for Beginners</p> 
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <img src="certficate3.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">SKILL BUILD</h5>
+              <p class="card-text">Certificate on Front End Development.</p>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <img src="certficate2.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">SKILL BUILD</h5>
+              <p class="card-text">For Successfully Completed course on<br>Introduction to Javascript and React 2/6.</p> 
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    </section>
+    <!-------Certificate End--------->
+   
+    <!---------------contact-->
+    <div id="contact">
+        <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fas fa-paper-plane"></i>uafriduafrid4180@gmail.com</p>
+                <p><i class="fas fa-phone-square-alt"></i>6302850565</p>
+                <div class="social-icons">
+                    
+                    <a href="https://instagram.com/shaid229?igshid=MzNlNGNkZWQ4Mg=="><i class="fab fa-instagram"></i></a>
+                    
+                </div>
+                <a href="AResume.pdf" download class="btn btn3">Download RESUME</a>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12286.482826366993!2d77.4800481524852!3d15.848794735845088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb63ec4d4d4ab43%3A0xae6f05cc5be49d0b!2sNandavaram%2C%20Andhra%20Pradesh%20518343!5e1!3m2!1sen!2sin!4v1689861637335!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        </div>
+        <div class="copyright">
+            <p>Copyright © Created by Afrid</p>
+        </div>
+    </div>
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontents of tabcontents){
+                tabcontents.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        var sidemenu= document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right ="0";
+        }
+        function closemenu(){
+            sidemenu.style.right ="-200px";
+        }
+    </script>
+    
+</body>
+</html>
